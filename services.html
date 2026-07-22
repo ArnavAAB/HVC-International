@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="HVC Internationals - Our Services. Import, export, sourcing and trade consulting services for global buyers and suppliers.">
+    <meta name="author" content="HVC Internationals">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>HVC Internationals - Our Services</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-space-dynamic.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+<!--
+
+HVC Internationals - Our Services Page
+Built on the Space Dynamic template structure (TemplateMo 562)
+https://templatemo.com/tm-562-space-dynamic
+
+-->
+
+    <!-- Page-specific styles for the Services page -->
+    <style>
+      :root {
+        --hvc-navy: #1f2d5c;
+        --hvc-navy-soft: rgba(31, 45, 92, 0.08);
+        --hvc-gold: #c79a3f;
+        --hvc-gold-soft: #f5edd9;
+        --hvc-bg-soft: #f9f6ef;
+        --hvc-border: #e5ded0;
+        --hvc-text-body: #5a5a5a;
+        --hvc-text-dark: #1a1a2e;
+      }
+
+      /* ----- Hero ----- */
+      .services-hero {
+        padding: 140px 0 20px;
+      }
+
+      .services-hero .eyebrow {
+        color: var(--hvc-navy);
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+
+      .services-hero h2 {
+        font-size: 56px;
+        font-weight: 800;
+        color: var(--hvc-text-dark);
+        margin-bottom: 16px;
+      }
+
+      .services-hero h2 em {
+        font-style: normal;
+        color: var(--hvc-gold);
+      }
+
+      .services-hero .lead {
+        font-size: 17px;
+        color: #444;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      /* ----- Shared section heading ----- */
+      .services-section-title {
+        color: var(--hvc-navy);
+        font-weight: 800;
+        margin-bottom: 6px;
+        text-align: center;
+      }
+
+      /* ----- Service cards ----- */
+      .services-grid {
+        padding: 20px 0 60px;
+      }
+
+      .service-card-col {
+        margin-bottom: 40px;
+      }
+
+      .service-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 28px 24px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .service-card:hover,
+      .service-card:focus-within {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
+      }
+
+      .service-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: var(--hvc-gold-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+
+      .service-icon i {
+        color: var(--hvc-gold);
+        font-size: 20px;
+      }
+
+      .service-card h4 {
+        color: var(--hvc-navy);
+        font-weight: 700;
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .service-card p {
+        color: #666;
+        font-size: 14px;
+        margin: 0 0 18px;
+        line-height: 1.6;
+      }
+
+      .services-cta {
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+      }
+
+      .btn-enquire {
+        display: inline-block;
+        padding: 14px 40px;
+        background: var(--hvc-navy);
+        color: #fff;
+        border-radius: 25px;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .btn-enquire:hover,
+      .btn-enquire:focus-visible {
+        background: var(--hvc-gold);
+        color: var(--hvc-navy);
+        text-decoration: none;
+      }
+
+      /* ----- Industries ----- */
+      .industries-section {
+        padding: 20px 0 60px;
+        background: var(--hvc-bg-soft);
+      }
+
+      .industry-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .industry-tag {
+        background: #fff;
+        border: 1px solid var(--hvc-border);
+        color: var(--hvc-navy);
+        font-weight: 600;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-size: 14px;
+      }
+
+      /* ----- Key features ----- */
+      .features-section {
+        padding: 60px 0;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .feature-item {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+
+      .feature-item-inner {
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 12px;
+        width: 280px;
+        max-width: 100%;
+        text-align: left;
+      }
+
+      .feature-item i {
+        color: var(--hvc-gold);
+        font-size: 18px;
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+
+      .feature-item span {
+        color: #333;
+        font-size: 15px;
+      }
+
+      .feature-item strong {
+        color: var(--hvc-navy);
+      }
+
+      /* ----- Force Home nav link visible (overrides template's default white nav-link color) ----- */
+      .header-area .main-nav .nav li a,
+      .header-area.header-sticky .main-nav .nav li a {
+        color: var(--hvc-navy) !important;
+      }
+
+      .header-area .main-nav .nav li a:hover,
+      .header-area .main-nav .nav li a:focus {
+        color: var(--hvc-gold) !important;
+      }
+
+      /* ----- Reusable pill buttons ----- */
+      .btn-pill-outline {
+        display: inline-block;
+        padding: 10px 28px;
+        border: 1px solid var(--hvc-navy);
+        border-radius: 25px;
+        color: var(--hvc-navy);
+        background: transparent;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background 0.25s ease, color 0.25s ease;
+      }
+
+      .btn-pill-outline:hover,
+      .btn-pill-outline:focus-visible {
+        background: var(--hvc-navy);
+        color: #fff;
+      }
+
+      .footer-links {
+        margin-top: 16px;
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .footer-links .btn-pill-outline {
+        padding: 8px 22px;
+        font-size: 14px;
+      }
+
+      .back-section {
+        padding: 0 0 60px;
+      }
+
+      /* ----- Respect reduced-motion preference ----- */
+      @media (prefers-reduced-motion: reduce) {
+        .service-card,
+        .btn-pill-outline,
+        .industry-tag {
+          transition: none;
+        }
+
+        .service-card:hover,
+        .service-card:focus-within {
+          transform: none;
+        }
+      }
+
+      /* ----- Responsive tuning ----- */
+      @media (max-width: 991px) {
+        .services-hero {
+          padding: 110px 0 10px;
+        }
+
+        .services-hero h2 {
+          font-size: 40px;
+        }
+
+        .service-card-col {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .services-hero h2 {
+          font-size: 32px;
+        }
+
+        .services-hero .lead {
+          font-size: 15px;
+        }
+      }
+    </style>
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <h4>HVC<span> Internationals</span></h4>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="index.html" style="color:#1f2d5c;">Home</a></li>
+            </ul>
+            <a class="menu-trigger" href="#" aria-label="Toggle navigation menu">
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Services Content Start ***** -->
+  <section id="top" class="services-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="left-content header-text wow fadeInLeft text-center" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h6 class="eyebrow">HVC Internationals</h6>
+            <h2>Our <em>Services</em></h2>
+            <p class="lead">End-to-end import and export support, built on quality-focused sourcing and reliable global partnerships.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Services Content End ***** -->
+
+  <!-- ***** Our Services Grid Start ***** -->
+  <section class="services-grid">
+    <div class="container">
+      <div class="row justify-content-center" style="margin-bottom:8px;">
+        <div class="col-lg-8 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+          <h3 class="services-section-title">What We Do</h3>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 service-card-col wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.9s">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa fa-globe" aria-hidden="true"></i>
+            </div>
+            <h4>Import &amp; Export</h4>
+            <p>International import and export of agricultural commodities, food products, and consumer goods.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 service-card-col wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.05s">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            <h4>Product Sourcing</h4>
+            <p>Product sourcing and supplier identification tailored to your specifications and budget.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 service-card-col wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.2s">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa fa-file-text-o" aria-hidden="true"></i>
+            </div>
+            <h4>Export Documentation</h4>
+            <p>Export documentation and compliance support to keep every shipment audit-ready.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 service-card-col wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.35s">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+            </div>
+            <h4>Trade Consulting</h4>
+            <p>International trade consulting to help you navigate markets, regulations, and pricing.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 service-card-col wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.5s">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa fa-truck" aria-hidden="true"></i>
+            </div>
+            <h4>Logistics Coordination</h4>
+            <p>Logistics coordination and shipment assistance from origin to final destination.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 service-card-col wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.65s">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa fa-users" aria-hidden="true"></i>
+            </div>
+            <h4>Market Research</h4>
+            <p>Market research and global buyer/supplier networking to open new trade relationships.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 services-cta wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+          <a href="https://wa.me/919867954976?text=Hi%2C%20I%27m%20interested%20in%20your%20services.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener noreferrer" class="btn-enquire">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Our Services Grid End ***** -->
+
+  <!-- ***** Industries We Serve Start ***** -->
+  <section class="industries-section">
+    <div class="container">
+      <div class="row justify-content-center" style="margin-bottom:24px;">
+        <div class="col-lg-8 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+          <h3 class="services-section-title">Industries We Serve</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <ul class="industry-tags">
+            <li class="industry-tag">Agriculture &amp; Food Products</li>
+            <li class="industry-tag">FMCG</li>
+            <li class="industry-tag">Consumer Goods</li>
+            <li class="industry-tag">Industrial Products</li>
+            <li class="industry-tag">General Merchandise</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Industries We Serve End ***** -->
+
+  <!-- ***** Key Features Start ***** -->
+  <section class="features-section">
+    <div class="container">
+      <div class="row justify-content-center" style="margin-bottom:24px;">
+        <div class="col-lg-8 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+          <h3 class="services-section-title">Key Features</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <ul class="feature-list row">
+
+            <li class="col-md-6 feature-item">
+              <span class="feature-item-inner">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <span><strong>Quality-focused sourcing</strong></span>
+              </span>
+            </li>
+            <li class="col-md-6 feature-item">
+              <span class="feature-item-inner">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <span><strong>Transparent business practices</strong></span>
+              </span>
+            </li>
+            <li class="col-md-6 feature-item">
+              <span class="feature-item-inner">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <span><strong>Timely communication</strong></span>
+              </span>
+            </li>
+            <li class="col-md-6 feature-item">
+              <span class="feature-item-inner">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <span><strong>Reliable global partnerships</strong></span>
+              </span>
+            </li>
+            <li class="col-md-6 feature-item">
+              <span class="feature-item-inner">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <span><strong>Competitive pricing</strong></span>
+              </span>
+            </li>
+            <li class="col-md-6 feature-item">
+              <span class="feature-item-inner">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <span><strong>Customer-centric approach</strong></span>
+              </span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Key Features End ***** -->
+
+  <!-- ***** Back Button Section Start ***** -->
+  <section class="back-section">
+    <div class="container">
+      <div class="row justify-content-start">
+        <div class="col-lg-4 col-md-6">
+          <button type="button" class="btn-pill-outline" onclick="history.back();">
+            &larr; Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Back Button Section End ***** -->
+
+  <footer style="padding-bottom:40px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeIn text-center" data-wow-duration="1s" data-wow-delay="0.25s">
+          <p>© Copyright 2026 HVC Internationals. All Rights Reserved.</p>
+          <div class="footer-links">
+            <a href="certifications.html" class="btn-pill-outline">Certifications</a>
+            <a href="terms.html" class="btn-pill-outline">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/templatemo-custom.js"></script>
+
+</body>
+</html>
