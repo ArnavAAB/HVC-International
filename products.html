@@ -110,7 +110,7 @@ https://templatemo.com/tm-562-space-dynamic
         <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.2s">
           <div class="product-card" onclick="openProductModal('makhana')" style="cursor:pointer; background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 14px 32px rgba(0,0,0,0.14)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)';">
             <div style="width:100%; height:260px; overflow:hidden;">
-              <img src="assets/images/makhana.jpg" alt="Makhana (Fox Nuts)" style="width:100%; height:100%; object-fit:cover;">
+              <img src="assets/images/mak.jpg" alt="Makhana (Fox Nuts)" style="width:100%; height:100%; object-fit:cover;">
             </div>
             <div style="padding:20px 24px 24px; text-align:center;">
               <h4 style="margin:0 0 6px; color:#1f2d5c; font-weight:700;">Makhana <span style="color:#c79a3f;">(Fox Nuts)</span></h4>
@@ -139,14 +139,25 @@ https://templatemo.com/tm-562-space-dynamic
 
   <!-- ***** Product Detail Modal Start ***** -->
   <div id="product-modal-overlay" onclick="closeProductModal(event)" style="display:none; position:fixed; inset:0; background:rgba(20,20,30,0.55); z-index:9999; align-items:center; justify-content:center; padding:20px;">
-    <div id="product-modal-card" onclick="event.stopPropagation()" style="background:#fff; max-width:760px; width:100%; max-height:88vh; overflow-y:auto; border-radius:18px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+    <div id="product-modal-card" onclick="event.stopPropagation()" style="background:#fff; max-width:960px; width:100%; max-height:90vh; overflow-y:auto; border-radius:18px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
       <button onclick="closeProductModal(event, true)" aria-label="Close" style="position:absolute; top:14px; right:14px; width:36px; height:36px; border-radius:50%; border:none; background:#1f2d5c; color:#fff; font-size:18px; line-height:1; cursor:pointer; z-index:2;">&times;</button>
 
       <div class="row" style="margin:0;">
-        <div class="col-md-5" style="padding:0;">
-          <img src="assets/images/makhana.jpg" alt="Makhana (Fox Nuts)" style="width:100%; height:100%; min-height:260px; object-fit:cover; border-radius:18px 0 0 18px;">
+        <div class="col-md-6" style="padding:0; position:relative; background:#f4f4f4; border-radius:18px 0 0 18px;">
+          <img id="product-modal-image" src="assets/images/mak.jpg" alt="Makhana (Fox Nuts)" style="width:100%; height:100%; min-height:420px; object-fit:contain; border-radius:18px 0 0 18px;">
+
+          <button type="button" onclick="showPrevProductImage(event)" aria-label="Previous image" style="position:absolute; top:50%; left:12px; transform:translateY(-50%); width:36px; height:36px; border-radius:50%; border:none; background:rgba(31,45,92,0.75); color:#fff; font-size:18px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;">&#8249;</button>
+          <button type="button" onclick="showNextProductImage(event)" aria-label="Next image" style="position:absolute; top:50%; right:12px; transform:translateY(-50%); width:36px; height:36px; border-radius:50%; border:none; background:rgba(31,45,92,0.75); color:#fff; font-size:18px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;">&#8250;</button>
+
+          <div id="product-modal-dots" style="position:absolute; bottom:12px; left:0; right:0; display:flex; gap:6px; justify-content:center;">
+            <span class="product-modal-dot" data-index="0" style="width:7px; height:7px; border-radius:50%; background:#fff;"></span>
+            <span class="product-modal-dot" data-index="1" style="width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.5);"></span>
+            <span class="product-modal-dot" data-index="2" style="width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.5);"></span>
+            <span class="product-modal-dot" data-index="3" style="width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.5);"></span>
+            <span class="product-modal-dot" data-index="4" style="width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.5);"></span>
+          </div>
         </div>
-        <div class="col-md-7" style="padding:32px 32px 32px 28px;">
+        <div class="col-md-6" style="padding:32px 32px 32px 28px;">
           <h3 style="color:#1f2d5c; font-weight:800; margin-bottom:4px;">Makhana <span style="color:#c79a3f;">(Fox Nuts)</span></h3>
           <p style="color:#888; font-size:14px; margin-bottom:18px;">Premium Roasted Lotus Seeds</p>
 
@@ -178,7 +189,38 @@ https://templatemo.com/tm-562-space-dynamic
   <!-- ***** Product Detail Modal End ***** -->
 
   <script>
+    var productModalImages = [
+      'assets/images/mak.jpg',
+      'assets/images/mak1.jpeg',
+      'assets/images/mak2.jpeg',
+      'assets/images/mak3.jpeg',
+      'assets/images/mak4.png'
+    ];
+    var productModalImageIndex = 0;
+
+    function updateProductModalImage() {
+      document.getElementById('product-modal-image').src = productModalImages[productModalImageIndex];
+      var dots = document.querySelectorAll('.product-modal-dot');
+      dots.forEach(function(dot, i) {
+        dot.style.background = (i === productModalImageIndex) ? '#fff' : 'rgba(255,255,255,0.5)';
+      });
+    }
+
+    function showNextProductImage(evt) {
+      if (evt) evt.stopPropagation();
+      productModalImageIndex = (productModalImageIndex + 1) % productModalImages.length;
+      updateProductModalImage();
+    }
+
+    function showPrevProductImage(evt) {
+      if (evt) evt.stopPropagation();
+      productModalImageIndex = (productModalImageIndex - 1 + productModalImages.length) % productModalImages.length;
+      updateProductModalImage();
+    }
+
     function openProductModal(productId) {
+      productModalImageIndex = 0;
+      updateProductModalImage();
       document.getElementById('product-modal-overlay').style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
@@ -189,9 +231,14 @@ https://templatemo.com/tm-562-space-dynamic
       }
     }
     document.addEventListener('keydown', function(e) {
+      var modalOpen = document.getElementById('product-modal-overlay').style.display === 'flex';
       if (e.key === 'Escape') {
         document.getElementById('product-modal-overlay').style.display = 'none';
         document.body.style.overflow = '';
+      } else if (modalOpen && e.key === 'ArrowRight') {
+        showNextProductImage();
+      } else if (modalOpen && e.key === 'ArrowLeft') {
+        showPrevProductImage();
       }
     });
   </script>
