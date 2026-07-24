@@ -1678,6 +1678,16 @@ rules here gives every page the same comfortable gutters and type scale.
     text-align: left;
   }
 
+  .about-us .services .item .icon {
+    float: none;
+    margin: 0 auto 16px;
+    text-align: center;
+  }
+
+  .about-us .services .item .right-text {
+    text-align: center !important;
+  }
+
   .our-services,
   .our-portfolio,
   .our-blog {
