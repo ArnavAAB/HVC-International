@@ -41,6 +41,16 @@ https://templatemo.com/tm-562-space-dynamic
       .header-area .main-nav .nav li a:focus {
         color: #c79a3f !important;
       }
+
+      /* ----- Ensure clear vertical spacing between stacked product cards on mobile ----- */
+      @media (max-width: 767px) {
+        .product-card-col {
+          margin-bottom: 40px !important;
+        }
+        .product-card-col:last-child {
+          margin-bottom: 0 !important;
+        }
+      }
     </style>
 
   </head>
@@ -107,7 +117,7 @@ https://templatemo.com/tm-562-space-dynamic
   <section style="padding: 0 0 60px;">
     <div class="container">
       <div class="row justify-content-start">
-        <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.2s">
+        <div class="col-lg-4 col-md-6 product-card-col wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.2s" style="margin-bottom:32px;">
           <div class="product-card" onclick="openProductModal('makhana')" style="cursor:pointer; background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 14px 32px rgba(0,0,0,0.14)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)';">
             <div style="width:100%; height:260px; overflow:hidden;">
               <img src="assets/images/mak.jpg" alt="Makhana (Fox Nuts)" style="width:100%; height:100%; object-fit:cover;">
@@ -115,6 +125,17 @@ https://templatemo.com/tm-562-space-dynamic
             <div style="padding:20px 24px 24px; text-align:center;">
               <h4 style="margin:0 0 6px; color:#1f2d5c; font-weight:700;">Makhana <span style="color:#c79a3f;">(Fox Nuts)</span></h4>
               <p style="margin:0; color:#666; font-size:14px;">Premium roasted lotus seeds — click to view details</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 product-card-col wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.4s" style="margin-bottom:32px;">
+          <div class="product-card" onclick="openProductModal('cashew')" style="cursor:pointer; background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 14px 32px rgba(0,0,0,0.14)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)';">
+            <div style="width:100%; height:260px; overflow:hidden;">
+              <img src="assets/images/cashew.jpg" alt="Cashew Nuts" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div style="padding:20px 24px 24px; text-align:center;">
+              <h4 style="margin:0 0 6px; color:#1f2d5c; font-weight:700;">Cashew <span style="color:#c79a3f;">Nuts</span></h4>
+              <p style="margin:0; color:#666; font-size:14px;">Premium whole cashews — click to view details</p>
             </div>
           </div>
         </div>
@@ -158,10 +179,10 @@ https://templatemo.com/tm-562-space-dynamic
           </div>
         </div>
         <div class="col-md-6" style="padding:32px 32px 32px 28px;">
-          <h3 style="color:#1f2d5c; font-weight:800; margin-bottom:4px;">Makhana <span style="color:#c79a3f;">(Fox Nuts)</span></h3>
-          <p style="color:#888; font-size:14px; margin-bottom:18px;">Premium Roasted Lotus Seeds</p>
+          <h3 id="product-modal-title" style="color:#1f2d5c; font-weight:800; margin-bottom:4px;">Makhana <span style="color:#c79a3f;">(Fox Nuts)</span></h3>
+          <p id="product-modal-subtitle" style="color:#888; font-size:14px; margin-bottom:18px;">Premium Roasted Lotus Seeds</p>
 
-          <p style="color:#444; line-height:1.6; margin-bottom:22px;">
+          <p id="product-modal-description" style="color:#444; line-height:1.6; margin-bottom:22px;">
             Hand-picked, sun-dried and gently roasted lotus seeds sourced from the finest wetland farms.
             A light, crunchy, nutrient-dense snack, popular as a healthy alternative to fried snacks and
             widely used in both everyday snacking and festive delicacies.
@@ -170,18 +191,22 @@ https://templatemo.com/tm-562-space-dynamic
           <table style="width:100%; font-size:15px; color:#333; border-collapse:collapse;">
             <tr style="border-top:1px solid #eee;">
               <td style="padding:10px 0; font-weight:600; color:#1f2d5c; vertical-align:top;">Origin</td>
-              <td style="padding:10px 0; vertical-align:top;">Bihar, India</td>
+              <td id="product-modal-origin" style="padding:10px 0; vertical-align:top;">Bihar, India</td>
             </tr>
-            <tr style="border-top:1px solid #eee; border-bottom:1px solid #eee;">
+            <tr style="border-top:1px solid #eee;">
               <td style="padding:10px 0; font-weight:600; color:#1f2d5c; vertical-align:top;">Nutrition <span style="font-weight:400; color:#999; font-size:12px;">(per 100g)</span></td>
-              <td style="padding:10px 0;">
+              <td id="product-modal-nutrition" style="padding:10px 0;">
                 Calories: 347 kcal &nbsp;•&nbsp; Protein: 9.7g &nbsp;•&nbsp; Carbs: 76g<br>
                 Fat: 0.1g &nbsp;•&nbsp; Fiber: 14.5g &nbsp;•&nbsp; Sodium: Low
               </td>
             </tr>
+            <tr style="border-top:1px solid #eee; border-bottom:1px solid #eee;">
+              <td style="padding:10px 0; font-weight:600; color:#1f2d5c; vertical-align:top;">GST Number</td>
+              <td id="product-modal-gst" style="padding:10px 0; vertical-align:top;">10ABCDE1234F1Z5</td>
+            </tr>
           </table>
 
-          <a href="https://wa.me/919931700001?text=Hi%2C%20I%27m%20interested%20in%20your%20Makhana%20(Fox%20Nuts)%20product.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:22px; padding:10px 26px; background:#1f2d5c; color:#fff; border-radius:25px; text-decoration:none; font-weight:600;">Enquire Now</a>
+          <a id="product-modal-enquire" href="https://wa.me/919931700001?text=Hi%2C%20I%27m%20interested%20in%20your%20Makhana%20(Fox%20Nuts)%20product.%20Could%20you%20share%20more%20details%3F" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:22px; padding:10px 26px; background:#1f2d5c; color:#fff; border-radius:25px; text-decoration:none; font-weight:600;">Enquire Now</a>
         </div>
       </div>
     </div>
@@ -189,20 +214,52 @@ https://templatemo.com/tm-562-space-dynamic
   <!-- ***** Product Detail Modal End ***** -->
 
   <script>
-    var productModalImages = [
-      'assets/images/mak.jpg',
-      'assets/images/mak1.jpeg',
-      'assets/images/mak2.jpeg',
-      'assets/images/mak3.jpeg',
-      'assets/images/mak4.png'
-    ];
+    var productsData = {
+      makhana: {
+        title: 'Makhana <span style="color:#c79a3f;">(Fox Nuts)</span>',
+        subtitle: 'Premium Roasted Lotus Seeds',
+        description: 'Hand-picked, sun-dried and gently roasted lotus seeds sourced from the finest wetland farms. A light, crunchy, nutrient-dense snack, popular as a healthy alternative to fried snacks and widely used in both everyday snacking and festive delicacies.',
+        origin: 'Bihar, India',
+        nutrition: 'Calories: 347 kcal &nbsp;•&nbsp; Protein: 9.7g &nbsp;•&nbsp; Carbs: 76g<br>Fat: 0.1g &nbsp;•&nbsp; Fiber: 14.5g &nbsp;•&nbsp; Sodium: Low',
+        gst: '10ABCDE1234F1Z5',
+        whatsappText: "Hi, I'm interested in your Makhana (Fox Nuts) product. Could you share more details?",
+        images: [
+          'assets/images/mak.jpg',
+          'assets/images/mak1.jpeg',
+          'assets/images/mak2.jpeg',
+          'assets/images/mak3.jpeg',
+          'assets/images/mak4.png'
+        ]
+      },
+      cashew: {
+        title: 'Cashew <span style="color:#c79a3f;">Nuts</span>',
+        subtitle: 'Premium Whole Cashews',
+        description: 'Carefully processed and graded whole cashew kernels, prized for their rich, buttery flavor and crisp texture. Sourced from trusted growers and quality-checked for size, color and freshness — ideal for snacking, gifting and culinary use.',
+        origin: 'India',
+        nutrition: 'Calories: 553 kcal &nbsp;•&nbsp; Protein: 18g &nbsp;•&nbsp; Carbs: 30g<br>Fat: 44g &nbsp;•&nbsp; Fiber: 3.3g &nbsp;•&nbsp; Sodium: Low',
+        gst: '10ABCDE1234F1Z5',
+        whatsappText: "Hi, I'm interested in your Cashew Nuts product. Could you share more details?",
+        images: [
+          'assets/images/cashew.jpg',
+          'assets/images/cashew1.jpeg',
+          'assets/images/cashew2.jpeg'
+        ]
+      }
+    };
+
+    var productModalImages = [];
     var productModalImageIndex = 0;
 
     function updateProductModalImage() {
       document.getElementById('product-modal-image').src = productModalImages[productModalImageIndex];
       var dots = document.querySelectorAll('.product-modal-dot');
       dots.forEach(function(dot, i) {
-        dot.style.background = (i === productModalImageIndex) ? '#fff' : 'rgba(255,255,255,0.5)';
+        if (i < productModalImages.length) {
+          dot.style.display = 'block';
+          dot.style.background = (i === productModalImageIndex) ? '#fff' : 'rgba(255,255,255,0.5)';
+        } else {
+          dot.style.display = 'none';
+        }
       });
     }
 
@@ -219,8 +276,23 @@ https://templatemo.com/tm-562-space-dynamic
     }
 
     function openProductModal(productId) {
+      var product = productsData[productId];
+      if (!product) return;
+
+      productModalImages = product.images;
       productModalImageIndex = 0;
       updateProductModalImage();
+
+      document.getElementById('product-modal-title').innerHTML = product.title;
+      document.getElementById('product-modal-subtitle').textContent = product.subtitle;
+      document.getElementById('product-modal-description').textContent = product.description;
+      document.getElementById('product-modal-origin').textContent = product.origin;
+      document.getElementById('product-modal-nutrition').innerHTML = product.nutrition;
+      document.getElementById('product-modal-gst').textContent = product.gst;
+
+      var enquireLink = document.getElementById('product-modal-enquire');
+      enquireLink.href = 'https://wa.me/919931700001?text=' + encodeURIComponent(product.whatsappText);
+
       document.getElementById('product-modal-overlay').style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
