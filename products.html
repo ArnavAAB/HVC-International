@@ -200,16 +200,12 @@ https://templatemo.com/tm-562-space-dynamic
               <td style="padding:10px 0; font-weight:600; color:#1f2d5c; vertical-align:top;">Origin</td>
               <td id="product-modal-origin" style="padding:10px 0; vertical-align:top;">Bihar, India</td>
             </tr>
-            <tr style="border-top:1px solid #eee;">
+            <tr style="border-top:1px solid #eee; border-bottom:1px solid #eee;">
               <td style="padding:10px 0; font-weight:600; color:#1f2d5c; vertical-align:top;">Nutrition <span style="font-weight:400; color:#999; font-size:12px;">(per 100g)</span></td>
               <td id="product-modal-nutrition" style="padding:10px 0;">
                 Calories: 347 kcal &nbsp;•&nbsp; Protein: 9.7g &nbsp;•&nbsp; Carbs: 76g<br>
                 Fat: 0.1g &nbsp;•&nbsp; Fiber: 14.5g &nbsp;•&nbsp; Sodium: Low
               </td>
-            </tr>
-            <tr style="border-top:1px solid #eee; border-bottom:1px solid #eee;">
-              <td style="padding:10px 0; font-weight:600; color:#1f2d5c; vertical-align:top;">GST Number</td>
-              <td id="product-modal-gst" style="padding:10px 0; vertical-align:top;">10ABCDE1234F1Z5</td>
             </tr>
           </table>
 
@@ -228,7 +224,6 @@ https://templatemo.com/tm-562-space-dynamic
         description: 'Hand-picked, sun-dried and gently roasted lotus seeds sourced from the finest wetland farms. A light, crunchy, nutrient-dense snack, popular as a healthy alternative to fried snacks and widely used in both everyday snacking and festive delicacies.',
         origin: 'Bihar, India',
         nutrition: 'Calories: 347 kcal &nbsp;•&nbsp; Protein: 9.7g &nbsp;•&nbsp; Carbs: 76g<br>Fat: 0.1g &nbsp;•&nbsp; Fiber: 14.5g &nbsp;•&nbsp; Sodium: Low',
-        gst: '10ABCDE1234F1Z5',
         whatsappText: "Hi, I'm interested in your Makhana (Fox Nuts) product. Could you share more details?",
         images: [
           'assets/images/mak.jpg',
@@ -244,7 +239,6 @@ https://templatemo.com/tm-562-space-dynamic
         description: 'Carefully processed and graded whole cashew kernels, prized for their rich, buttery flavor and crisp texture. Sourced from trusted growers and quality-checked for size, color and freshness — ideal for snacking, gifting and culinary use.',
         origin: 'India',
         nutrition: 'Calories: 553 kcal &nbsp;•&nbsp; Protein: 18g &nbsp;•&nbsp; Carbs: 30g<br>Fat: 44g &nbsp;•&nbsp; Fiber: 3.3g &nbsp;•&nbsp; Sodium: Low',
-        gst: '10ABCDE1234F1Z5',
         whatsappText: "Hi, I'm interested in your Cashew Nuts product. Could you share more details?",
         images: [
           'assets/images/cas1.png',
@@ -295,7 +289,6 @@ https://templatemo.com/tm-562-space-dynamic
       document.getElementById('product-modal-description').textContent = product.description;
       document.getElementById('product-modal-origin').textContent = product.origin;
       document.getElementById('product-modal-nutrition').innerHTML = product.nutrition;
-      document.getElementById('product-modal-gst').textContent = product.gst;
 
       var enquireLink = document.getElementById('product-modal-enquire');
       enquireLink.href = 'https://wa.me/919931700001?text=' + encodeURIComponent(product.whatsappText);
@@ -327,6 +320,7 @@ https://templatemo.com/tm-562-space-dynamic
       <div class="row">
         <div class="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
           <p>© Copyright 2026 HVC Internationals. All Rights Reserved.</p>
+          <p style="margin-top:6px; font-size:13px; color:#666;">GST No: 10CVFPV5837E1ZK</p>
           <div style="margin-top:16px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
             <a href="certifications.html" style="padding:8px 22px; border:1px solid #1f2d5c; border-radius:20px; color:#1f2d5c; text-decoration:none; font-size:14px; font-weight:600; transition: all 0.3s ease;" onmouseover="this.style.background='#1f2d5c'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#1f2d5c';">Certifications</a>
             <a href="terms.html" style="padding:8px 22px; border:1px solid #1f2d5c; border-radius:20px; color:#1f2d5c; text-decoration:none; font-size:14px; font-weight:600; transition: all 0.3s ease;" onmouseover="this.style.background='#1f2d5c'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#1f2d5c';">Terms &amp; Conditions</a>
