@@ -1,0 +1,29 @@
+/* products.css — page-specific styles extracted from products.html */
+
+/* ----- Force Home nav link visible (overrides template's default white nav-link color) ----- */
+.header-area .main-nav .nav li a,
+.header-area.header-sticky .main-nav .nav li a {
+  color: #1f2d5c !important;
+}
+
+.header-area .main-nav .nav li a:hover,
+.header-area .main-nav .nav li a:focus {
+  color: #c79a3f !important;
+}
+
+/* ----- Ensure clear vertical spacing between stacked product cards on mobile ----- */
+@media (max-width: 767px) {
+  .product-card-col {
+    margin-bottom: 40px !important;
+  }
+  .product-card-col:last-child {
+    margin-bottom: 0 !important;
+  }
+  .product-modal-image-wrap {
+    height: 220px !important;
+    border-radius: 18px 18px 0 0 !important;
+  }
+  .product-modal-image-wrap img {
+    border-radius: 18px 18px 0 0 !important;
+  }
+}

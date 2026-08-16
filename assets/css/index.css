@@ -1,0 +1,45 @@
+/* index.css — page-specific styles extracted from index.html */
+
+#top, #about, #services, #portfolio, #blog, #contact {
+  scroll-margin-top: 100px;
+}
+
+/* Give each anchor-jump section enough height to fill the screen below
+   the header, so landing on a section doesn't leave the next section
+   already half-visible underneath it. */
+#about, #services, #blog {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+}
+
+#about > .container, #services > .container, #blog > .container {
+  width: 100%;
+}
+
+/* Change button color on hover */
+.main-red-button,
+.main-red-button a,
+.main-blue-button,
+.main-blue-button a,
+.main-button {
+  transition: background-color 0.2s ease;
+}
+/* Scoped to the actual visible button (the <a>, or a real <button>
+   element) — never the plain wrapping <div>, which has no styling
+   of its own and would otherwise show as a full-width color bar.
+   !important overrides the theme's own hover rule on the nav's
+   last <li> (Contact Now), which would otherwise take priority. */
+.main-red-button:hover a,
+.main-blue-button:hover a,
+button.main-button:hover {
+  background-color: #f4a403 !important;
+}
+
+/* Blog cards are placeholders (all links point to "#") — make every
+   link/image inside the blog section unclickable and remove the
+   pointer cursor so it doesn't look interactive. */
+#blog a {
+  pointer-events: none;
+  cursor: default;
+}
