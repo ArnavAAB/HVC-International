@@ -1,6 +1,6 @@
 # HVC Internationals — Website
 
-Marketing website for **HVC Internationals**, a global import-export company specializing in Makhana (Fox Nuts) and quality agri-products. Built on top of the TemplateMo 562 "Space Dynamic" template.
+Marketing website for **HVC Internationals**, a global import-export company specializing in Makhana (Fox Nuts) and quality agri-products.
 
 ## Pages
 
